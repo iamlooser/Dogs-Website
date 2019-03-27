@@ -14,7 +14,7 @@ SECRET_KEY = '3ru3ngp7v--cdwwgnhbe&%%$^$%gsd%k&m(ur=-o_r(%t$_ntp+u*@@0*mp1d_pg4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #DEBUG = bool(os.environ.get('DJANGO_DEBUG', False))
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','35.243.220.78']
 
 
 # Application definition
