@@ -1,0 +1,67 @@
+
+{% extends 'index.html' %}
+{% load static %}
+{% block title %}SignIn {% endblock %}
+
+{% block style %}
+  <style media="screen">
+
+  .form-filed{
+    margin: 60px;
+    padding: 60px;
+    height: 500px;
+    width: 450px;
+    text-align: center;
+    border: 3px solid black;
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.52)
+  }
+  .form{
+    padding: 50px;
+    background: url("{% static 'bg.jpg' %}");
+
+  }
+  </style>
+{% endblock %}
+
+
+
+
+{% block body %}
+
+
+
+<div class="form">
+   <form method="post" class="form-filed" action="{% url 'signedIn' %}">
+     {% csrf_token %}
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <h2 style=" background-color: rgb(0, 0, 0); color: white;padding: 5px ">SignIn</h2>
+     </div><br>
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <input class="mdl-textfield__input" type="text" name="username" id="sample3" >
+       <label class="mdl-textfield__label" for="sample3" style="color:black"  >Email...</label>
+     </div><br>
+     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+       <input class="mdl-textfield__input" type="password" name="password" id="sample3">
+       <label class="mdl-textfield__label" for="sample3" style="color:black">Password...</label>
+     </div><br><br>
+     <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" style="background-color: rgb(0, 0, 0); width: 100px">
+      LOGIN
+    </button>
+
+
+   </form>
+</div>
+
+{% endblock %}
+
+{%  block script %}
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script type="text/javascript">
+  {{ swal_msg }}({  title: "Login",
+                  text: "Username or Password something went wrong.",
+                  icon: "warning",
+                  buttons: true,
+                  dangerMode: true});
+</script>
+{% endblock %}
